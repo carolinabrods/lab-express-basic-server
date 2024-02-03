@@ -20,13 +20,15 @@
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/school/ironhack"
+                href="https://www.linkedin.com/in/carolinabrodrigues"
                 class="hover:text-blue-500"
                 >LinkedIn</a
               >
             </li>
             <li>
-              <a href="https://github.com" class="hover:text-blue-500"
+              <a
+                href="https://github.com/carolinabrods"
+                class="hover:text-blue-500"
                 >GitHub</a
               >
             </li>
@@ -47,18 +49,42 @@
           <div>
             <h2 class="text-2xl font-bold mb-4">About Me</h2>
             <p class="text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              lacinia odio vitae vestibulum. Donec in efficitur leo. Vestibulum
-              nec magna ac dui tempus vestibulum. Curabitur facilisis, nulla vel
-              venenatis auctor, leo magna sodales felis, quis malesuada nibh
-              odio ut velit. Proin pharetra luctus enim, sit amet cursus quam
-              semper a. Mauris eu ante vitae eros faucibus aliquam. Sed ornare
-              gravida arcu, id placerat risus lacinia at. Integer accumsan
-              ligula ante, non feugiat neque ullamcorper vel. Nullam a erat nec
-              nisl condimentum fermentum at sed massa. Fusce non risus eu arcu
-              placerat porttitor. Mauris fermentum velit vel congue luctus. Sed
-              cursus orci at porta ornare. Donec sit amet aliquet tellus, a
-              ornare justo. Donec tempus tincidunt leo id tincidunt.
+              What do you want to be when you grow up? Pharmaceutic, Biologist,
+              Journalist, Marketeer, and Psychologist - those were my answers
+              through the years. I was always fascinated by work and careers, to
+              the point where I wanted to be everything at once 🦸🏻‍♀️
+            </p>
+            <p class="text-gray-600">
+              Psychology was my choice to pursue because I wanted to understand
+              people's behaviors. My Master’s in Organizational Psychology and
+              curiosity over technology took me to tech recruitment where I
+              stayed for 3 years. My goal was to match great people with amazing
+              companies in the tech world.
+            </p>
+            <p class="text-gray-600">
+              I’m truly passionate about changing people’s lives for the better,
+              and recruitment was just my first exposure to career development.
+              Currently, as the 𝗖𝗮𝗿𝗲𝗲𝗿 𝗔𝗱𝘃𝗶𝘀𝗼𝗿 at Ironhack Portugal, I’m helping
+              career changers pursue their desired outcomes in their new careers
+              in tech.
+            </p>
+            <p class="text-gray-600">
+              👩🏻‍💻 What is my job really about? Provide all the tools and tricks
+              for the job search, deal with frustration and imposter syndrome
+              that are common in the job hunt journey, and think up solutions
+              for the critical blockers that come along the way. My favorite
+              part is to get down to the nitty-gritty of solving their problems.
+              It's like a puzzle, but with actual human lives at stake. No
+              pressure, right? 🫣
+            </p>
+            <p class="text-gray-600">
+              When working with me, you can count on a 𝘦𝘮𝘱𝘢𝘵𝘩𝘦𝘵𝘪𝘤,
+              𝘨𝘰𝘢𝘭-𝘰𝘳𝘪𝘦𝘯𝘵𝘦𝘥, and 𝘱𝘳𝘢𝘨𝘮𝘢𝘵𝘪𝘤 person that will care about providing
+              you with 𝘵𝘩𝘦 𝘣𝘦𝘴𝘵 𝘦𝘹𝘱𝘦𝘳𝘪𝘦𝘯𝘤𝘦 𝘦𝘷𝘦𝘳 🙌 Whether you're an individual
+              looking to advance your career, or an organization seeking to
+              attract and retain top talent, I have the expertise and insights
+              to help you succeed. Let's connect and explore how we can work
+              together to achieve your goals.
             </p>
           </div>
         </div>
@@ -80,24 +106,24 @@
     <footer class="gradient-footer bg-gray-800 text-white py-4 mt-10">
       <div class="container mx-auto text-center">
         <p class="text-xl font-medium">LAB | Express Basic Server</p>
-        <p class="mt-2 opacity-70 text-sm">© 2023 Ironhack</p>
+        <p class="mt-2 opacity-70 text-sm">© 2024 Ironhack</p>
       </div>
     </footer>
 
     <script>
       window.onload = function () {
-        fetch("/api/projects")
-          .then((response) => {
+        fetch('/api/projects')
+          .then(response => {
             if (!response.ok) {
-              throw new Error("Network response was not ok");
+              throw new Error('Network response was not ok');
             }
             return response.json();
           })
-          .then((projects) => {
+          .then(projects => {
             const projectsContainer =
-              document.getElementById("projectsContainer");
+              document.getElementById('projectsContainer');
 
-            projects.forEach((project) => {
+            projects.forEach(project => {
               const projectCard = `
                   <div class="bg-white shadow-md rounded p-6 flex flex-col justify-between">
                       <div>
@@ -111,10 +137,10 @@
                           <ul class="mt-2 mb-4">
                               ${project.techStack
                                 .map(
-                                  (tech) =>
+                                  tech =>
                                     `<li class="inline-block text-white px-2 py-1 rounded mr-2 mt-2 tag">${tech}</li>`
                                 )
-                                .join("")}
+                                .join('')}
                           </ul>
                       </div>
                       <div class="mt-4 flex justify-between">
@@ -130,20 +156,20 @@
               projectsContainer.innerHTML += projectCard;
             });
 
-            document.querySelectorAll(".image-loader").forEach((loader) => {
-              const imgSrc = loader.getAttribute("data-image");
+            document.querySelectorAll('.image-loader').forEach(loader => {
+              const imgSrc = loader.getAttribute('data-image');
               const img = new Image();
               img.src = imgSrc;
               img.onload = () => {
                 loader.style.background = `url('${imgSrc}') no-repeat center/cover`;
-                loader.classList.remove("bg-gray-300", "animate-pulse");
+                loader.classList.remove('bg-gray-300', 'animate-pulse');
               };
             });
           })
-          .catch((error) => {
-            console.error("Failed to load projects:", error);
+          .catch(error => {
+            console.error('Failed to load projects:', error);
             const projectsContainer =
-              document.getElementById("projectsContainer");
+              document.getElementById('projectsContainer');
             projectsContainer.innerHTML = `
                   <div class="text-center py-4 lg:px-4">
                       <div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
